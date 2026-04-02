@@ -1,0 +1,160 @@
+/* ─── Panel Container (glass-morphism per DESIGN.md §10.1) ─── */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  height: 100%;
+}
+
+/* ─── Mode Toggle ─── */
+
+.modeToggle {
+  display: flex;
+  gap: 2px;
+  padding: 2px;
+  background: var(--color-bg-primary);
+  border-radius: 6px;
+  margin-bottom: 4px;
+}
+
+.modeButton {
+  flex: 1;
+  padding: 5px 0;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--color-text-tertiary);
+  background: transparent;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease;
+}
+
+.modeButton:hover {
+  color: var(--color-text-secondary);
+}
+
+.modeButtonActive {
+  color: var(--color-text-primary);
+  background: var(--color-bg-tertiary);
+}
+
+/* ─── Body Section Highlighting (DESIGN.md §8.2) ─── */
+
+.bodySection {
+  border-radius: 4px;
+  border-left: 3px solid transparent;
+  transition: opacity 300ms ease-in-out, background 200ms ease-out, border-color 200ms ease-out;
+}
+
+.bodySectionFocused {
+  background: color-mix(in srgb, var(--section-body-color) 8%, transparent);
+  border-left-color: color-mix(in srgb, var(--section-body-color) 60%, transparent);
+}
+
+.bodySectionDimmed {
+  opacity: 0.6;
+}
+
+/* ─── Control Layout ─── */
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.controlRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.controlRowDisabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.controlLabel {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  min-width: 42px;
+  flex-shrink: 0;
+}
+
+.controlInputs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── Run Simulation Button (DESIGN.md §10.5) ─── */
+
+.runSection {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--color-border-subtle);
+}
+
+.runButton {
+  width: 100%;
+  padding: 8px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-bg-primary);
+  background: var(--color-text-primary);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: opacity 200ms ease, transform 100ms ease;
+}
+
+.runButton:hover {
+  opacity: 0.9;
+}
+
+.runButton:active {
+  transform: scale(0.97);
+}
+
+.randomResetButton {
+  width: 100%;
+  padding: 6px 20px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  background: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: color 150ms ease, background 150ms ease, opacity 150ms ease;
+  margin-bottom: 6px;
+}
+
+.randomResetButton:hover:not(:disabled) {
+  color: var(--color-text-primary);
+  background: color-mix(in srgb, var(--color-bg-tertiary) 70%, var(--color-text-primary) 10%);
+}
+
+.randomResetButton:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.randomResetButton:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.pauseHint {
+  display: block;
+  text-align: center;
+  font-size: 12px;
+  color: var(--color-text-tertiary);
+  padding: 8px 0;
+}

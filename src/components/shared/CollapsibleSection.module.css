@@ -1,0 +1,58 @@
+.section {
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  color: var(--color-text-primary);
+  width: 100%;
+  text-align: left;
+  transition: background 200ms ease;
+}
+
+.header:hover {
+  background: var(--color-bg-tertiary);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--body-color);
+  box-shadow: 0 0 6px var(--body-color);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.chevron {
+  color: var(--color-text-tertiary);
+  transition: transform 200ms ease;
+  flex-shrink: 0;
+}
+
+.chevronOpen {
+  transform: rotate(180deg);
+}
+
+.body {
+  padding: 4px 0 4px 12px;
+}

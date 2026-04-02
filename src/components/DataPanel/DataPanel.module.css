@@ -1,0 +1,277 @@
+/* ─── Panel Shell ─── */
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-bg-secondary);
+}
+
+.panelCollapsed {
+  align-items: center;
+  justify-content: flex-start;
+  padding: var(--space-small) 0;
+}
+
+/* ─── Header ─── */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-small) var(--space-medium);
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+.title {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--color-text-secondary);
+}
+
+.toggleButton {
+  background: none;
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  padding: 2px 7px;
+  font-size: 11px;
+  line-height: 1.5;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.toggleButton:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+/* ─── Collapsed strip ─── */
+
+.collapsedToggle {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  background: none;
+  border: none;
+  color: var(--color-text-tertiary);
+  cursor: pointer;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: var(--space-medium) 0;
+  width: 100%;
+  transition: color 150ms ease;
+}
+
+.collapsedToggle:hover {
+  color: var(--color-text-primary);
+}
+
+/* ─── Tabs ─── */
+
+.tabs {
+  display: flex;
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+.tab {
+  flex: 1;
+  padding: var(--space-small) var(--space-medium);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 500;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.tab:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.tabActive {
+  color: var(--color-text-primary);
+  border-bottom-color: var(--color-text-accent);
+}
+
+/* ─── Scrollable content area ─── */
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--space-medium);
+}
+
+/* ─── Variable Filter (chip bar) ─── */
+
+.filterBar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-micro);
+  padding: var(--space-small) var(--space-medium);
+  border-bottom: 1px solid var(--color-border-subtle);
+  flex-shrink: 0;
+}
+
+.chip {
+  padding: 2px 8px;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-subtle);
+  background: none;
+  color: var(--color-text-tertiary);
+  font-size: 10px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 150ms ease, color 150ms ease, border-color 150ms ease;
+}
+
+.chip:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-secondary);
+}
+
+.chipActive {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-border-emphasis);
+  color: var(--color-text-primary);
+}
+
+/* ─── Table View ─── */
+
+.tableWrapper {
+  overflow-x: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.table th {
+  padding: var(--space-micro) var(--space-small);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid var(--color-border-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--color-bg-secondary);
+  white-space: nowrap;
+}
+
+.thLabel {
+  text-align: left;
+  color: var(--color-text-secondary);
+  min-width: 72px;
+}
+
+.thBody {
+  text-align: right;
+  min-width: 58px;
+}
+
+.thSystem {
+  text-align: left;
+  color: var(--color-text-secondary);
+  padding-left: var(--space-medium);
+}
+
+.tableRow:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.tableRow td {
+  padding: 3px var(--space-small);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.tdLabel {
+  text-align: left;
+  color: var(--color-text-secondary);
+  font-family: var(--font-sans);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tdValue {
+  text-align: right;
+  color: var(--color-text-primary);
+  transition: background-color 200ms ease;
+}
+
+.tdSystem {
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  padding-left: var(--space-medium);
+  word-break: break-word;
+  max-width: 100px;
+}
+
+/* ─── Graph View ─── */
+
+.graphContainer {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-medium);
+}
+
+.chartGroup {
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.chartGroupHeader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-small) var(--space-medium);
+  background: var(--color-bg-tertiary);
+  border: none;
+  cursor: pointer;
+  color: var(--color-text-secondary);
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  transition: background 150ms ease, color 150ms ease;
+}
+
+.chartGroupHeader:hover {
+  background: var(--color-bg-elevated);
+  color: var(--color-text-primary);
+}
+
+.chartGroupChevron {
+  font-size: 8px;
+  opacity: 0.6;
+}
+
+.chartBody {
+  background: var(--color-bg-primary);
+  padding: var(--space-small) 0;
+}
+
+/* ─── Empty state ─── */
+
+.emptyMessage {
+  color: var(--color-text-tertiary);
+  font-size: 12px;
+  text-align: center;
+  padding: var(--space-xlarge) var(--space-large);
+}

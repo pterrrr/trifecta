@@ -1,0 +1,18 @@
+.input {
+  width: 72px;
+  padding: 4px 8px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--color-text-primary);
+  background: var(--color-bg-primary);
+  border: 1px solid var(--color-border-subtle);
+  border-radius: 4px;
+  text-align: right;
+  transition: border-color 200ms ease;
+}
+
+.input:focus {
+  border-color: var(--body-color, var(--color-border-emphasis));
+  outline: none;
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--body-color, transparent) 15%, transparent);
+}

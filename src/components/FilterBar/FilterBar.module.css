@@ -1,0 +1,33 @@
+/* DESIGN.md §10.7 — Filter Toggle Bar */
+
+.filterBar {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  padding: 6px 0;
+}
+
+.chip {
+  padding: 4px 10px;
+  font-size: 11px;
+  font-family: inherit;
+  border-radius: 12px;
+  border: 1px solid var(--color-border-subtle);
+  background: transparent;
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  transition: all 150ms ease;
+  user-select: none;
+  line-height: 1.4;
+}
+
+.chip:hover {
+  background: var(--color-bg-tertiary);
+  color: var(--color-text-primary);
+}
+
+.chip.active {
+  background: var(--color-bg-tertiary);
+  border-color: var(--color-text-accent);
+  color: var(--color-text-primary);
+}
